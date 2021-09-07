@@ -1,0 +1,24 @@
+<view>
+  <!-- <view class="title">公告列表</view> -->
+  <van-search
+  value="{{ value }}"
+  shape="round"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:change="onChange"
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+  />
+  <block wx:if="{{value}}">
+    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+  </block>
+  <block wx:else>
+    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+
+  </block>
+
+</view>

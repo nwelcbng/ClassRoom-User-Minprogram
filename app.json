@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/classroom/classroom",
+    "pages/reserve/reserve",
+    "pages/detail/detail",
+    "pages/classroomRev/classroomRev",
+    "pages/classroomDetail/classroomDetail"
+  ],
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "tabBar": {
+    "selectedColor": "#c74546",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/imgs/tabbar/shouye.png",
+        "selectedIconPath": "/assets/imgs/tabbar/shouye-active.png"
+      },
+      {
+        "pagePath": "pages/classroom/classroom",
+        "text": "教室",
+        "iconPath": "/assets/imgs/tabbar/jiaoshi.png",
+        "selectedIconPath": "/assets/imgs/tabbar/jiaoshi-active.png"
+      },
+      {
+        "pagePath": "pages/reserve/reserve",
+        "text": "预约",
+        "iconPath": "/assets/imgs/tabbar/yuyue.png",
+        "selectedIconPath": "/assets/imgs/tabbar/yuyue-active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教室预约小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-search": "@vant/weapp/search/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

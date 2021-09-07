@@ -1,0 +1,1 @@
+<commonItem title="{{position}}" label="{{type+' '+capacity}}" bind:cpnTap="cpnTap"></commonItem>

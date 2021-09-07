@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/classroom/classroom",
+          "pathName": "pages/classroom/classroom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classroomDetail/classroomDetail",
+          "pathName": "pages/classroomDetail/classroomDetail",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

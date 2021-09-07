@@ -1,0 +1,4 @@
+/* pages/classroomDetail/classroomDetail.wxss */
+.button{
+  margin: 40rpx 0;
+}

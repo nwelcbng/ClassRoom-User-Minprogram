@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "home-swiper":"/components/common/swiper/swiper",
+    "news":"/components/home/news/news"
+  }
+}

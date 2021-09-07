@@ -1,0 +1,44 @@
+<!-- <van-cell-group title="材化大楼" >
+  <roomItem id="{{id}}"></roomItem>
+  <roomItem id="{{id}}"></roomItem>
+  <roomItem id="{{id}}"></roomItem>
+</van-cell-group>
+<van-cell-group title="智能大楼">
+  <roomItem id="{{id}}"></roomItem>
+  <roomItem id="{{id}}"></roomItem>
+  <roomItem id="{{id}}"></roomItem>
+</van-cell-group>
+<van-cell-group title="土建大楼">
+
+</van-cell-group>
+<van-cell-group title="林世哲大楼">
+
+</van-cell-group>
+<van-cell-group title="梁绳基大楼">
+
+</van-cell-group>
+<van-cell-group title="项南大楼">
+
+</van-cell-group>
+<van-cell-group title="瑞基大楼">
+
+</van-cell-group> -->
+
+<van-cell-group title="请选择要预约的大楼">
+  <commonItem title="{{params[0].type}}" isLink="true" params="{{params[0]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[1].type}}" isLink="true" params="{{params[1]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[2].type}}" isLink="true" params="{{params[2]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[3].type}}" isLink="true" params="{{params[3]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[4].type}}" isLink="true" params="{{params[4]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[5].type}}" isLink="true" params="{{params[5]}}" bind:cpnTap="cpnTap" ></commonItem>
+  <commonItem title="{{params[6].type}}" isLink="true" params="{{params[6]}}" bind:cpnTap="cpnTap" ></commonItem>
+</van-cell-group>
+
+<van-search
+  value="{{ value }}"
+  shape="round"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:change="onChange"
+  />

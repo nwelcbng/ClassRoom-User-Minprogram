@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "roomItem":"/components/classroom/roomItem/roomItem",
+    "commonItem":"../../components/common/commonItem/commonItem"
+  }
+}

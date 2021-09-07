@@ -1,0 +1,26 @@
+<van-cell-group  title="教室信息">
+  <commonItem title="当前大楼：{{type}}"></commonItem>
+  <commonItem title="教室位置：{{position}}"></commonItem>
+  <commonItem title="人员容量：{{capacity}}"></commonItem>
+  <van-cell title="当前状态：" value="刷新状态" clickable>
+    <van-icon slot="right-icon" name="replay" class="custom-icon" />
+  </van-cell>
+  <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：未知">
+  </van-cell>
+</van-cell-group> 
+<van-cell-group  title="信息完善">
+  <van-cell title="选择单个日期" value="{{ date }}" bind:click="DateOnDisplay" />
+  <van-calendar show="{{ Dateshow }}" bind:close="DateOnClose" bind:confirm="DateOnConfirm" show-confirm="{{ false }}"/>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <van-cell class="picker" title="已选择时间段" value="{{array[index]}}" />
+  </picker>
+
+  <van-field
+    model:value="{{ inputValue }}"
+    placeholder="请输入备注信息"
+    clearable
+    label="备注"
+    border="{{ false }}"
+  />
+  <button type="primary" bindtap="submit" class="button">提交</button>
+</van-cell-group>

@@ -1,0 +1,5 @@
+<!-- <van-cell title="{{type}}" value="{{}}" label="{{''}}" is-link bindtap="gotoRev" />
+<van-cell title="教室一" bindtap="open" label="{{position + '  ' + capacity}}" />
+<van-cell center inset="true"  title="公告" value="查看" is-link  bindtap="click1" label="请问请问驱蚊器请问请问驱蚊器请问请问驱蚊器" /> -->
+
+<van-cell title="{{title}}" value="{{value}}" label="{{label}}" is-link="{{isLink}}" bindtap="cpnTap" />

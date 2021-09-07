@@ -1,0 +1,17 @@
+.title{
+  margin: 30rpx 30rpx 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  border-bottom: solid #f1f1f1;
+  font-size: 50rpx;
+}
+.search-new{
+  display: flex;
+  justify-content: center;
+  margin: 20rpx auto; 
+  padding: 20rpx;
+}
+.input{
+  border: solid black 1px;
+}

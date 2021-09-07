@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "commonItem":"/components/common/commonItem/commonItem"
+  }
+}

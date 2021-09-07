@@ -1,0 +1,8 @@
+.roomInput{
+  border: 1px solid gray;
+  text-align: left;
+  border-radius: 10rpx;
+}
+.roomItem{
+  margin: 15rpx 0;
+}
