@@ -1,11 +1,13 @@
 // pages/password/password.js
+import password from "../../network/password"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    password:""
   },
 
   /**
@@ -62,5 +64,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  submit(){
+    password(JSON.stringify({password:this.data.password})).then(res => {
+      console.log(res)
+      wx.showToast({
+        title: '修改成功',
+        duration:1500
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: err,
+        icon:"error",
+        duration:1500
+      })
+    })
   }
 })

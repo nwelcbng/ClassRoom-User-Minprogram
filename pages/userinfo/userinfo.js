@@ -1,4 +1,6 @@
 // pages/userinfo/userinfo.js
+import {submit,getUserinfo} from "../../network/userinfo"
+
 Page({
 
   /**
@@ -18,7 +20,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    getUserinfo().then(res => {
+      console.log(res);
+      this.setData({
+        username:res.username,
+        level:res.level,
+        sno:res.sno,
+        class:res.class,
+        major:res.major,
+        college:res.college
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: err,
+        icon:"error",
+        duration:1500
+      })
+    })
   },
 
   /**
@@ -68,5 +86,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  submit(){
+    const form = {
+      username:this.data.username,
+      level:this.data.level,
+      sno:this.data.sno,
+      class:this.data.class,
+      major:this.data.major,
+      college:this.data.college,
+      level:this.data.level
+    }
+    console.log(JSON.stringify(form))
+    submit(JSON.stringify(form)).then(res => {
+      console.log(res)
+      wx.showToast({
+        title: '修改成功',
+        duration:1500
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: err,
+        icon:"error",
+        duration:1500
+      })
+    })
   }
 })
