@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    Allclass:{
+      type:Array,
+      value:[]
+    }
   },
 
   /**
@@ -61,9 +64,8 @@ Component({
       console.log('cencel')
     },
     cpnTap(e){
-      console.log(e.detail);
       wx.navigateTo({
-        url: '/pages/classroomRev/classroomRev?type='+e.detail.type,
+        url: `/pages/classroomRev/classroomRev?type=${e.detail.type}`,
       })
     }
   }

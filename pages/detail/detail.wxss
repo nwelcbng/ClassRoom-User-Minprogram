@@ -1,1 +1,16 @@
 /* pages/detail/detail.wxss */
+.title{
+  margin: 50rpx auto;
+  font-size: 30rpx;
+  text-align: center;
+}
+.content{
+  width: 700rpx;
+  margin: 0 auto;
+  text-indent: 2em;
+}
+.date{
+  width: 700rpx;
+  margin: 0 auto;
+  text-align: right;
+}

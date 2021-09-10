@@ -1,35 +1,18 @@
-// pages/detail/detail.js
+// pages/password/password.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:"",
-    newItem:null
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      title:options.title
-    })
-    console.log(options.title)
-    let newItem = wx.getStorageSync('news').find(item => {
-      console.log(item.title)
-      return item.title == options.title;
-    })
-    if(!newItem){
-      newItem = wx.getStorageSync('newsSearch').find(item => {
-        console.log(item.title)
-        return item.title == options.title;
-      })
-    }
-    this.setData({
-      newItem:newItem
-    })
+
   },
 
   /**

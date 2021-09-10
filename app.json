@@ -5,7 +5,12 @@
     "pages/reserve/reserve",
     "pages/detail/detail",
     "pages/classroomRev/classroomRev",
-    "pages/classroomDetail/classroomDetail"
+    "pages/classroomDetail/classroomDetail",
+    "pages/userinfo/userinfo",
+    "pages/roomHas/roomHas",
+    "pages/password/password",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "useExtendedLib": {
     "kbone": true,

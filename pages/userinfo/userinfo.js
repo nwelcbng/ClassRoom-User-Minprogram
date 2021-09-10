@@ -1,35 +1,24 @@
-// pages/detail/detail.js
+// pages/userinfo/userinfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:"",
-    newItem:null
+    username:"qweqwew",
+    level:"用户",
+    sno:"31209392",
+    class:"材料4班",
+    major:"材料",
+    college:"计算机学院",
+    level:"成员"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      title:options.title
-    })
-    console.log(options.title)
-    let newItem = wx.getStorageSync('news').find(item => {
-      console.log(item.title)
-      return item.title == options.title;
-    })
-    if(!newItem){
-      newItem = wx.getStorageSync('newsSearch').find(item => {
-        console.log(item.title)
-        return item.title == options.title;
-      })
-    }
-    this.setData({
-      newItem:newItem
-    })
+
   },
 
   /**

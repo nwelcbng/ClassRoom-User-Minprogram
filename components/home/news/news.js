@@ -1,10 +1,18 @@
 // components/home/news/news.js
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    news:{
+      type:Array,
+      value:[]
+    },
+    newsSearch:{
+      type:Array,
+      value:[]
+    },
   },
 
   /**
@@ -25,13 +33,14 @@ Component({
     },
     onSearch(e){
       console.log(e.detail)
+      this.triggerEvent("onSearch",{title:e.detail},{})
     },
     onCancel(){
       console.log("can")
     },
-    cpnTap(){
+    cpnTap(e){
       wx.navigateTo({
-        url: '/pages/detail/detail?title=一个标题'
+        url: `/pages/detail/detail?title=${e.detail.title}`
       })
     }
   }

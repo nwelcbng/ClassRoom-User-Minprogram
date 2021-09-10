@@ -1,6 +1,6 @@
 {
   "usingComponents": {
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "roomItem":"/components/common/roomItem/roomItem"
+    "van-field": "@vant/weapp/field/index"
   }
 }

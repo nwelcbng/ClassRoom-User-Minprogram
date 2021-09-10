@@ -1,3 +1,3 @@
 
 <home-swiper banners="{{background}}"></home-swiper>
-<news></news>
+<news news="{{news}}" newsSearch="{{newsSearch}}" bind:onSearch="onSearch"></news>

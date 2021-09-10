@@ -31,7 +31,7 @@ Component({
     },
     params:{
       type:Object,
-      value:{}
+      value:null
     }
   },
 

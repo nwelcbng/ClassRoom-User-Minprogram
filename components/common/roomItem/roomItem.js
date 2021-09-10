@@ -21,6 +21,10 @@ Component({
     type:{
       type:String,
       value:"林世哲大楼"
+    },
+    isLink:{
+      type:Boolean,
+      value:true
     }
   },
 
@@ -28,10 +32,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    dialogShow: false,
-    // buttons: [{text: '取消'}, {text: '确定'}],
-    // result: [],
-    // value:''
   },
 
 
@@ -40,10 +40,11 @@ Component({
    */
   methods: {
     cpnTap(){
-      wx.navigateTo({
-        url: `/pages/classroomDetail/classroomDetail?cid=${this.__data__.cid}&position=${this.__data__.position}&type=${this.__data__.type}&capacity=${this.__data__.capacity}`
-      })
-
+      if(this.__data__.isLink){
+        wx.navigateTo({
+          url: `/pages/classroomDetail/classroomDetail?cid=${this.__data__.cid}&position=${this.__data__.position}&type=${this.__data__.type}&capacity=${this.__data__.capacity}`
+        })
+      }
       // this.setData({ dialogShow: true });
     },
     // tapDialogButton(e) {

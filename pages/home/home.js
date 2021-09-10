@@ -1,5 +1,6 @@
 // // pages/home/home.js
 // import {getSwiper} from "../../network/home"
+import {getNews,searchNews} from "../../network/home"
 
 Page({
 
@@ -22,6 +23,8 @@ Page({
         image:'/assets/imgs/tabbar/jiaoshi-active.png'
       }
       ],  //这是本地图片
+      news:[],
+      newsSearch:[]
   },
 
   /**
@@ -80,13 +83,25 @@ Page({
 
   },
   onLoad(){
-    // getSwiper().then(res => {
-    //   console.log(res.data.data.banner.list)
-    //   this.setData({
-    //     banners:res.data.data.banner.list
-    //   })
-    // }).catch(err => {
-    //   console.log(err)
-    // })
+    getNews().then(res => {
+      wx.setStorageSync('news', res.data.announcements);
+      this.setData({
+        news:res.data.announcements
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: err,
+        icon:'error'
+      })
+    })
+  },
+  onSearch(options){
+    console.log(options.title)
+    searchNews(options.title).then(res => {
+      wx.setStorageSync('newsSearch', res.data.announcements);
+      this.setData({
+        newsSearch:res.data.announcements
+      })
+    }) 
   }
 })

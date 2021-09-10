@@ -23,6 +23,24 @@
           "pathName": "pages/classroomDetail/classroomDetail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/reserve/reserve",
+          "pathName": "pages/reserve/reserve",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
         }
       ]
     }

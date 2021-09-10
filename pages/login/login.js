@@ -1,29 +1,21 @@
-// pages/classroomRev/classroomRev.js
+// pages/login/login.js
+import login from "../../network/login"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    type:"",
-    classes:[]
+    username:"",
+    password:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      type:options.type
-    })
-    const classes = wx.getStorageSync('Allclass').find((item) => {
-      return item.position == this.data.type
-    });
-    console.log(classes);
-    this.setData({
-      classes:classes.class
-    })
+
   },
 
   /**
@@ -37,7 +29,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      username:wx.getStorageSync('username'),
+      password:wx.getStorageSync('password')
+    })
   },
 
   /**
@@ -74,10 +69,33 @@ Page({
   onShareAppMessage: function () {
 
   },
-  cpnTap(e){
-    console.log(e.detail);
-    this.setData({
-      type:e.detail.type
+  formSubmit(e){
+    console.log(e.detail.value);
+    login(JSON.stringify(e.detail.value)).then(res => {
+      //登录成功的情况
+      console.log(res)
+      wx.showToast({
+        title: '登陆成功',
+        duration:1500
+      })
+      wx.setStorageSync('token', res.data);
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+      },1500);
+
+    }).catch(err => {
+      console.log(err)
+      wx.showToast({
+        title: err,
+        icon:'error',
+        duration:1500
+      })
     })
-  },
+
+    // wx.switchTab({
+    //   url: '/pages/home/home',
+    // })
+  }
 })

@@ -8,7 +8,7 @@ export default function(config){
         timeout:config.timeout,
         header:config.header,
         success: res => {
-          resolve(res);
+          resolve(res.data)
         },
         fail: err => {
           reject(err);

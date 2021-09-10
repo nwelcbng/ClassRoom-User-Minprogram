@@ -1,35 +1,21 @@
-// pages/detail/detail.js
+// pages/register/register.js
+
+import register from"../../network/register"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:"",
-    newItem:null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      title:options.title
-    })
-    console.log(options.title)
-    let newItem = wx.getStorageSync('news').find(item => {
-      console.log(item.title)
-      return item.title == options.title;
-    })
-    if(!newItem){
-      newItem = wx.getStorageSync('newsSearch').find(item => {
-        console.log(item.title)
-        return item.title == options.title;
-      })
-    }
-    this.setData({
-      newItem:newItem
-    })
+
   },
 
   /**
@@ -78,6 +64,31 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  formSubmit(e){
+    console.log(e.detail.value);
+    wx.setStorageSync('username', e.detail.value.username);
+    wx.setStorageSync('password', e.detail.value.password);
+    register(JSON.stringify(e.detail.value)).then(res => {
+      console.log(res)
+      wx.showToast({
+        title: '注册成功',
+        duration:1500
+      })
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+      }, 1500);
+
+    }).catch(err => {
+      wx.showToast({
+        title: err,
+        icon:'error',
+        duration:1500
+      })
+    })
 
   }
 })

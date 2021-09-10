@@ -1,0 +1,22 @@
+<view class="options">
+  <navigator url="/pages/userinfo/userinfo">
+    <view class="options-item">查看并修改个人信息</view>
+  </navigator>
+  <navigator url="/pages/roomHas/roomHas">
+    <view class="options-item">查看已经预定的课室</view>
+  </navigator>
+  <navigator url="/pages/password/password">
+    <view class="options-item">修改密码</view>
+  </navigator>
+  <navigator>
+    <button class="share-btn-left" open-type="share" ></button>
+      <button class="share-btn-right" open-type="share" ></button>
+    <view class="options-item">分享给朋友</view>
+  </navigator>
+  <navigator>
+    <button class="feedback-btn-left" open-type="feedback"></button>
+    <button class="feedback-btn-right" open-type="feedback"></button>
+    <view class="options-item">意见反馈</view>
+  </navigator>
+
+</view>

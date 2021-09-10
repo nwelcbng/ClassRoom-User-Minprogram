@@ -10,15 +10,16 @@
   bind:cancel="onCancel"
   />
   <block wx:if="{{value}}">
+    <!-- <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
     <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
-    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
-    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
+    <commonItem title="新闻" label="这是搜索的新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem> -->
+    <commonItem wx:for="{{newsSearch}}" wx:key="index" title="{{item.title}}" label="{{item.date}}" value="查看" isLink bind:cpnTap="cpnTap" params="{{ {title:item.title } }}"></commonItem>
   </block>
   <block wx:else>
+    <!-- <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
     <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
-    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
-    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem>
-
+    <commonItem title="新闻" label="这是一条新闻" value="查看" isLink bind:cpnTap="cpnTap"></commonItem> -->
+    <commonItem wx:for="{{news}}" wx:key="index" title="{{item.title}}" label="{{item.date}}" value="查看" isLink bind:cpnTap="cpnTap" params="{{ {title:item.title } }}"></commonItem>
   </block>
 
 </view>

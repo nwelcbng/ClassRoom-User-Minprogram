@@ -1,5 +1,6 @@
 <van-cell-group title="这里是{{type}}">
-  <roomItem cid="123" capacity="130人" type="材化大楼" position="教室一"></roomItem>
-  <roomItem cid="124" capacity="130人" type="材化大楼" position="教室二"></roomItem>
-  <roomItem cid="125" capacity="130人" type="材化大楼" position="教室三"></roomItem>
+  <roomItem wx:for="{{classes}}" wx:key="index" cid="{{item.cid}}" capacity="{{item.capacity}}" type="{{item.position}}" position="教室一" ></roomItem>
+  <!-- <roomItem cid="123" capacity="1303人" type="材化大楼" position="教室一" ></roomItem>
+  <roomItem cid="124" capacity="1303人" type="材化大楼" position="教室二" ></roomItem>
+  <roomItem cid="125" capacity="1303人" type="材化大楼" position="教室三" ></roomItem> -->
 </van-cell-group> 

@@ -2,7 +2,7 @@
   <commonItem title="当前大楼：{{type}}"></commonItem>
   <commonItem title="教室位置：{{position}}"></commonItem>
   <commonItem title="人员容量：{{capacity}}"></commonItem>
-  <van-cell title="当前状态：" value="刷新状态" clickable>
+  <van-cell title="当前日期(请选择一个日期)" value="刷新状态" clickable>
     <van-icon slot="right-icon" name="replay" class="custom-icon" />
   </van-cell>
   <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：未知">
@@ -23,4 +23,5 @@
     border="{{ false }}"
   />
   <button type="primary" bindtap="submit" class="button">提交</button>
+  <view class="clear-view">123</view>
 </van-cell-group>

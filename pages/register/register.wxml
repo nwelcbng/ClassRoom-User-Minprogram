@@ -1,0 +1,26 @@
+<view class="options">
+  <form catchsubmit="formSubmit">
+    <view class="title">教室预约小程序</view>
+    <view class="input-item">
+      <text class="label">用户名</text><input class="input" type="text" name="username"></input>
+    </view>
+    <view class="input-item">
+      <text class="label">密码</text><input class="input" type="safe-password" name="password"></input>
+    </view>
+    <view class="input-item">
+      <text class="label">学号</text><input class="input input-username" type="number" name="sno"></input>
+    </view>
+    <view class="input-item">
+      <text class="label">班级</text><input class="input input-username" type="text" name="class"></input>
+    </view>
+    <view class="input-item">
+      <text class="label">专业</text><input class="input input-username" name="major"></input>
+    </view>
+    <view class="input-item">
+      <text class="label">学院</text><input class="input input-username" name="college"></input>
+    </view>
+    <view >
+      <button type="primary" class="go-input" formType="submit">提交</button>
+    </view>
+  </form>
+</view> 
