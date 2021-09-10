@@ -1,6 +1,5 @@
 // pages/classroom/classroom.js
 import sortClass from "../../data/sortClass"
-
 Page({
 
   /**
@@ -73,7 +72,6 @@ Page({
       Allclass
     })
     wx.setStorageSync('Allclass', Allclass)
-    console.log(this.data)
   },
 
   /**

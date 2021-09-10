@@ -1,4 +1,7 @@
 // components/classroom/roomDisplay/roomDisplay.js
+
+import { searchClass } from "../../../network/classroom"
+
 Component({
   /**
    * 组件的属性列表
@@ -23,29 +26,7 @@ Component({
       label:'123',
       title:'123'
     },
-    params:[
-      {
-        type:"材化大楼"
-      },
-      {
-        type:"智能大楼"
-      },
-      {
-        type:"土建大楼"
-      },
-      {
-        type:"林世哲大楼"
-      },
-      {
-        type:"梁绳基大楼"
-      },
-      {
-        type:"项南大楼"
-      },
-      {
-        type:"瑞基大楼"
-      },
-  ]
+    classSearch:[]
   },
   /**
    * 组件的方法列表
@@ -57,8 +38,13 @@ Component({
       });
     },
     onSearch(){
-      console.log(this.data.value)
-      console.log('search')
+      console.log(this.data.value);
+      searchClass(JSON.stringify(this.data.value)).then(res => {
+        console.log(res.data)
+        this.setData({
+          classSearch:res.data.allClass
+        })
+      })
     },
     onCancel(){
       console.log('cencel')

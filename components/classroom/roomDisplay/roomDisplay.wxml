@@ -43,3 +43,6 @@
   bind:search="onSearch"
   bind:change="onChange"
   />
+
+
+  <roomItem  cid="{{classSearch.cid}}" capacity="{{classSearch.capacity}}" type="{{classSearch.position}}" position="教室一" ></roomItem>
