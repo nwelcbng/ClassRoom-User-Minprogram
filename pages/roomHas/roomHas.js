@@ -1,18 +1,24 @@
 // pages/roomHas/roomHas.js
+import {getReserve} from '../../network/reserve'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    classHas:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    getReserve().then(res => {
+      this.setData({
+        classHas:res.data
+      })
+    })
   },
 
   /**

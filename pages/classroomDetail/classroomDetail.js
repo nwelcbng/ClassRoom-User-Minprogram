@@ -1,4 +1,6 @@
 // pages/classroomDetail/classroomDetail.js
+import { refresh,reserve } from '../../network/classroomDetail'
+
 Page({
 
   /**
@@ -12,7 +14,8 @@ Page({
     date: '',
     Dateshow: false,
     array: ['8:00-9:40', '10:00-11:40', '11:00-12:00', '14:30-16:10','16:20-18:00','19:00-20:40','20:50-21:35'],
-    index: 0,
+    classStatus:[],
+    index: 0, //选择器的序号
     inputValue:''
   },
 
@@ -20,13 +23,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(options);
+    let Timedefault = this.formatDate(new Date());
     this.setData({
       cid:options.cid,
       position:options.position,
       type:options.type,
-      capacity:options.capacity
-    })
+      capacity:options.capacity,
+      date:Timedefault
+    });
+    this.refresh();
   },
 
   /**
@@ -92,6 +98,7 @@ Page({
       Dateshow: false,
       date: this.formatDate(event.detail),
     });
+    this.refresh();
   },
   bindPickerChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -101,10 +108,80 @@ Page({
   },
   submit(){
     const data = {
-      sid:123,
+      sid:this.data.classStatus[this.data.index].sid,
       remark:this.data.inputValue
     }
-    console.log(data)
-  }
+    console.log(data);
+    reserve(data).then(res => {
+      wx.showToast({
+        title: '预定成功'
+      })
+    })
+  },
+  refresh(){
+      console.log(this.data.date);
+      wx.showLoading({
+        title: '请求中',
+      })
+      refresh({
+        cid:this.data.cid,
+        date:this.data.date
+      }).then(res => {
 
+        let obj = [
+          {
+            date: "2004-08-07",
+            moment: 1,
+            sid: "sid1",
+            status: 1
+          },
+          {
+            date: "2004-08-07",
+            moment: 3,
+            sid: "sid2",
+            status: 2
+          },
+          {
+            date: "2004-08-07",
+            moment: 2,
+            sid: "sid3",
+            status: 3
+          },
+          {
+            date: "2004-08-07",
+            moment: 6,
+            sid: "sid4",
+            status: 4
+          },
+          {
+            date: "2004-08-07",
+            moment: 5,
+            sid: "sid5",
+            status: 5
+          },
+          {
+            date: "2004-08-07",
+            moment: 4,
+            sid: "sid6",
+            status: 6
+          },
+          {
+            date: "2004-08-07",
+            moment: 0,
+            sid: "sid7",
+            status: 7
+          }
+        ]
+        let classStatus = obj.sort((a,b) => {
+          return a.moment - b.moment;
+        })
+        this.setData({
+          classStatus:classStatus
+        })
+      }).finally(() => {
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      })
+  }
 })

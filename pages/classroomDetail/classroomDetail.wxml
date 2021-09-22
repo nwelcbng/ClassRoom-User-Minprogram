@@ -2,10 +2,10 @@
   <commonItem title="当前大楼：{{type}}"></commonItem>
   <commonItem title="教室位置：{{position}}"></commonItem>
   <commonItem title="人员容量：{{capacity}}"></commonItem>
-  <van-cell title="当前日期(请选择一个日期)" value="刷新状态" clickable>
+  <van-cell title="当前日期(请选择一个日期)" value="刷新状态" bindtap="refresh"lickable>
     <van-icon slot="right-icon" name="replay" class="custom-icon" />
   </van-cell>
-  <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：未知">
+  <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：{{classStatus[index].status}}">
   </van-cell>
 </van-cell-group> 
 <van-cell-group  title="信息完善">
