@@ -1,19 +1,25 @@
 import request from "./request"
 
 export function submit(data){
+  console.log(wx.getStorageSync('token'))
   return request({
-    url:"https://mockapi.eolinker.com/UxuXyaK16a145235f10811d33338546f9963a33084a524e/user/updateInfo",
-    method:"put",
-    header:{Cookie:wx.getStorageSync('token')},
+    url:"/user/updateInfo",
+    method:"PUT",
+    header:{
+      'Content-Type':'application/x-www-form-urlencoded',
+      'Cookie':wx.getStorageSync('token')
+    },
     data
   })
 }
 
-export function getUserinfo(data){
+export function getUserinfo(){
   return request({
-    url:"https://mockapi.eolinker.com/UxuXyaK16a145235f10811d33338546f9963a33084a524e/user/getUserInfo",
+    url:"/user/getUserInfo",
     method:"get",
-    header:{Cookie:wx.getStorageSync('token')},
-    data
+    header:{
+      'Content-Type':'application/x-www-form-urlencoded',
+      'Cookie':wx.getStorageSync('token')
+    }
   })
 }

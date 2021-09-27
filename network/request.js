@@ -1,8 +1,10 @@
+const baseURL = 'https://www.ximple.icu';
+
 export default function(config){
   return new Promise((resolve,reject) => {
     wx.request(
       {
-        url: config.url,
+        url:baseURL + config.url,
         method:config.method || 'get',
         data:config.data || [],
         timeout:config.timeout,

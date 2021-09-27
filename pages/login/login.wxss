@@ -1,5 +1,6 @@
 
 .title{
+  font-size: 50rpx;
   margin: 80rpx 0;
   width: 100%;
   text-align: center;
@@ -11,6 +12,7 @@
 }
 .input{
   display: inline-block;
+  padding: 10rpx;
   border-radius: 10rpx;
   border: 1px solid #858585;
   vertical-align: middle;

@@ -25,7 +25,7 @@
 </van-cell-group> -->
 
 <van-cell-group title="请选择要预约的大楼">
-  <commonItem wx:for="{{Allclass}}" wx:key="index" title="{{item.position}}" isLink="true"  params="{{ {type:item.position,class:item.class} }}" bind:cpnTap="cpnTap"></commonItem>
+  <!-- <commonItem wx:for="{{Allclass}}" wx:key="index" title="{{item.position}}" isLink="true"  params="{{ {type:item.position,class:item.class} }}" bind:cpnTap="cpnTap"></commonItem> -->
   <!-- <commonItem title="{{params[0].type}}" isLink="true" params="{{params[0]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[1].type}}" isLink="true" params="{{params[1]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[2].type}}" isLink="true" params="{{params[2]}}" bind:cpnTap="cpnTap" ></commonItem>
@@ -33,6 +33,7 @@
   <commonItem title="{{params[4].type}}" isLink="true" params="{{params[4]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[5].type}}" isLink="true" params="{{params[5]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[6].type}}" isLink="true" params="{{params[6]}}" bind:cpnTap="cpnTap" ></commonItem> -->
+  <building wx:for="{{Allclass}}" wx:key="index" position="{{item.position}}"></building>
 </van-cell-group>
 
 <van-search
@@ -44,5 +45,5 @@
   bind:change="onChange"
   />
 
-
-  <roomItem  cid="{{classSearch.cid}}" capacity="{{classSearch.capacity}}" type="{{classSearch.position}}" position="教室一" ></roomItem>
+  <roomItem wx:for="{{classSearch}}" wx:key="index" cid="{{item.cid}}" capacity="{{item.capacity}}" type="{{item.position}}" position="{{item.name}}" ></roomItem>
+  <view class="bottom"></view>

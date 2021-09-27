@@ -32,6 +32,25 @@ Page({
    */
   onLoad: function (options) {
 
+    getNews().then(res => {
+      if(res.code === 1){
+        this.convertDate(res.data);
+        wx.setStorageSync('news', res.data);
+        this.setData({
+          news:res.data
+        })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:"error",
+        })
+      }
+    }).catch(err => {
+      wx.showToast({
+        title: '网络错误',
+        icon:'error'
+      })
+    })
   },
 
   /**
@@ -82,26 +101,35 @@ Page({
   onShareAppMessage: function () {
 
   },
-  onLoad(){
-    getNews().then(res => {
-      wx.setStorageSync('news', res.data.announcements);
-      this.setData({
-        news:res.data.announcements
-      })
+  onSearch(options){
+    let search = {
+      title:options.detail.title
+    }
+    searchNews(search).then(res => {
+      console.log(res)
+      if(res.code === 1){
+        this.convertDate(res.data);
+        wx.setStorageSync('newsSearch', res.data);
+        this.setData({
+          newsSearch:res.data
+        })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:"error",
+        })
+      }
     }).catch(err => {
       wx.showToast({
-        title: err,
+        title: '网络错误',
         icon:'error'
       })
     })
   },
-  onSearch(options){
-    console.log(options.title)
-    searchNews(options.title).then(res => {
-      wx.setStorageSync('newsSearch', res.data.announcements);
-      this.setData({
-        newsSearch:res.data.announcements
-      })
-    }) 
+  convertDate(data){
+    data.forEach(item => {
+      let date = new Date(item.date);
+      item.date = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+    })
   }
 })

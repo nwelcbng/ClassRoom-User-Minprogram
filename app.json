@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/register/register",
     "pages/home/home",
     "pages/classroom/classroom",
     "pages/reserve/reserve",
@@ -8,9 +10,7 @@
     "pages/classroomDetail/classroomDetail",
     "pages/userinfo/userinfo",
     "pages/roomHas/roomHas",
-    "pages/password/password",
-    "pages/login/login",
-    "pages/register/register"
+    "pages/password/password"
   ],
   "useExtendedLib": {
     "kbone": true,

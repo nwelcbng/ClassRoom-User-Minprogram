@@ -2,8 +2,7 @@
   "component": true,
   "usingComponents": {
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-cell": "@vant/weapp/cell/index",
-    "commonItem":"../../common/commonItem/commonItem",
-    "roomItem":"../../common/roomItem/roomItem"
+    "building":"/components/classroom/building/building",
+    "roomItem":"/components/common/roomItem/roomItem"
   }
 }

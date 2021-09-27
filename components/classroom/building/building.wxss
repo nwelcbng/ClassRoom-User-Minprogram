@@ -1,0 +1,20 @@
+/* components/classroom/building/building.wxss */
+.building{
+  box-sizing: border-box;
+  width: calc(50% - 20rpx);
+  display: inline-block;
+  margin: 10rpx;
+  /* border: 4px solid rgb(167, 167, 167); */
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx #c5c5c5;
+}
+.building-title,.building-img{
+  margin: 20rpx auto;
+  text-align: center;
+}
+.building-img{
+  display: block;
+  border-radius: 30rpx;
+  width: 250rpx;
+  height: 320rpx;
+}

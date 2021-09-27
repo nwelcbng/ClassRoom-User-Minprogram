@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username:"qweqwew",
-    level:"用户",
-    sno:"31209392",
-    class:"材料4班",
-    major:"材料",
-    college:"计算机学院",
-    level:"成员"
+    username:"",
+    level:"",
+    sno:"",
+    class:"",
+    major:"",
+    college:"",
+    level:""
   },
 
   /**
@@ -21,18 +21,25 @@ Page({
    */
   onLoad: function (options) {
     getUserinfo().then(res => {
-      console.log(res);
-      this.setData({
-        username:res.username,
-        level:res.level,
-        sno:res.sno,
-        class:res.class,
-        major:res.major,
-        college:res.college
-      })
+      if(res.code == 1){
+        res = res.data
+        this.setData({
+          username:res.username,
+          level:res.level,
+          sno:res.sno,
+          class:res.userClass,
+          major:res.major,
+          college:res.college
+        })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:"error",
+        })
+      }
     }).catch(err => {
       wx.showToast({
-        title: err,
+        title: '网络错误',
         icon:"error",
         duration:1500
       })
@@ -89,26 +96,42 @@ Page({
   },
   submit(){
     const form = {
-      username:this.data.username,
-      level:this.data.level,
       sno:this.data.sno,
       class:this.data.class,
       major:this.data.major,
-      college:this.data.college,
-      level:this.data.level
+      college:this.data.college
     }
-    console.log(JSON.stringify(form))
-    submit(JSON.stringify(form)).then(res => {
+    console.log(form);
+    wx.showLoading({
+      title: '请求中'
+    })
+    submit(form).then(res => {
       console.log(res)
-      wx.showToast({
-        title: '修改成功',
-        duration:1500
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            wx.showToast({
+              title: '修改成功',
+              duration:1500
+            })
+          }else{
+            wx.showToast({
+              title: res.msg,
+              icon:"error",
+            })
+          }
+        },
       })
     }).catch(err => {
-      wx.showToast({
-        title: err,
-        icon:"error",
-        duration:1500
+      console.log(err)
+      wx.hideLoading({
+        success: () => {
+          wx.showToast({
+            title: '网络错误',
+            icon:"error",
+            duration:1500
+          })
+        },
       })
     })
   }

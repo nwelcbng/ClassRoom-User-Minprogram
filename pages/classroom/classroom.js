@@ -1,5 +1,7 @@
 // pages/classroom/classroom.js
 import sortClass from "../../data/sortClass"
+import {searchClass} from "../../network/classroom"
+
 Page({
 
   /**
@@ -21,6 +23,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中'
+    })
     const Allclass = sortClass([
       {
         cid: "1",
@@ -66,12 +71,35 @@ Page({
         cid: "10",
         position: "项南大楼",
         capacity: "80人"
-      }]
+      },
+      {
+        cid: "11",
+        position: "信电大楼",
+        capacity: "50人"
+      },]
     )
-    this.setData({
-      Allclass
+    searchClass().then(res => {
+      if(res.code === 1){
+        const Allclass = sortClass(res.data) 
+        this.setData({
+          Allclass: Allclass
+        })
+        wx.setStorageSync('Allclass', Allclass)
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      }else{
+        wx.hideLoading({
+          success: (res) => {        
+            wx.showToast({
+            title: '网络错误',
+            icon:'error',
+            duration:1500
+          })},
+        })
+      }
     })
-    wx.setStorageSync('Allclass', Allclass)
+
   },
 
   /**

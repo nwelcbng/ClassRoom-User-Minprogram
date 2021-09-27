@@ -14,9 +14,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '请求中',
+    })
     getReserve().then(res => {
-      this.setData({
-        classHas:res.data
+      console.log(res)
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            this.setData({
+              classHas:res.data
+            })
+          }else{
+            wx.showToast({
+              title: res.msg,
+              icon:'error',
+              duration:1500
+            })
+          }
+        },
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: '网络错误',
+        icon:'error',
+        duration:1500
       })
     })
   },

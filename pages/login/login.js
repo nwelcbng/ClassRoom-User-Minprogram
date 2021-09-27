@@ -71,31 +71,46 @@ Page({
   },
   formSubmit(e){
     console.log(e.detail.value);
-    login(JSON.stringify(e.detail.value)).then(res => {
-      //登录成功的情况
-      console.log(res)
-      wx.showToast({
-        title: '登陆成功',
-        duration:1500
-      })
-      wx.setStorageSync('token', res.data);
-      setTimeout(() => {
-        wx.switchTab({
-          url: '/pages/home/home',
-        })
-      },1500);
-
-    }).catch(err => {
-      console.log(err)
-      wx.showToast({
-        title: err,
-        icon:'error',
-        duration:1500
-      })
+    
+    wx.showLoading({
+      title: '登陆中',
     })
 
-    // wx.switchTab({
-    //   url: '/pages/home/home',
-    // })
+    login(e.detail.value).then(res => {
+      //登录成功的情况
+      console.log(res)
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            wx.showToast({
+              title: '登陆成功',
+              duration:1500
+            })
+            wx.setStorageSync('token', res.data);
+            setTimeout(() => {
+              wx.switchTab({
+                url: '/pages/home/home',
+              })
+            },1500);
+          }else{
+            wx.showToast({
+              title: res.msg,
+              icon:"error",
+            })
+          }
+        },
+      })
+    }).catch(err => {
+      console.log(err)
+      wx.hideLoading({
+        success: () => {
+          wx.showToast({
+            title: '网络错误',
+            icon:'error',
+            duration:1500
+          })
+        },
+      })
+    })
   }
 })

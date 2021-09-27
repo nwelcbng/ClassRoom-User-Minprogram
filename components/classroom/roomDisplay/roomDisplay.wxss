@@ -1,1 +1,5 @@
 /* components/classroom/roomDisplay/roomDisplay.wxss */
+.bottom{
+  height: 100rpx;
+  margin-bottom: 100rpx;
+}

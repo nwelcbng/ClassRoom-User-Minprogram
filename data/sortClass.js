@@ -5,16 +5,12 @@ export default function sortClass(data){
       return item2.position == item.position;
     })
     if(index != -1){
-      console.log(index)
       result[index].class.push(item)
     }else{
       let instance = new building();
       instance.class.push(item)
       instance.position = item.position;
       result.push(instance)
-      // result[item.position] = new position();
-      // result[item.position].position = item.position;
-      // result[item.position].class.push(item)
     }
   });
   console.log(result)

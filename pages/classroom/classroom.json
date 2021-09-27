@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "class-swiper":"/components/common/swiper/swiper",
-    "roomDisplay":"/components/classroom/roomDisplay/roomDisplay"
+    "roomDisplay":"/components/classroom/roomDisplay/roomDisplay",
+    "building":"/components/classroom/building/building"
   }
 }

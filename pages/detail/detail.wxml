@@ -5,6 +5,5 @@
 </view>
 <view class="content">
   <text>{{newItem.content}}</text>
-  <text>填充内容填充内容填充内容填充内容填充内容填充内容填充内容填充内容填充内容填充内容填充内容</text>
 </view>
 <view class="date">{{newItem.date}}</view>

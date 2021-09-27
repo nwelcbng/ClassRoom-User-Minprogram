@@ -1,6 +1,6 @@
 // components/classroom/roomDisplay/roomDisplay.js
 
-import { searchClass } from "../../../network/classroom"
+import { searchmohuClass } from "../../../network/classroom"
 
 Component({
   /**
@@ -38,11 +38,13 @@ Component({
       });
     },
     onSearch(){
-      console.log(this.data.value);
-      searchClass(JSON.stringify(this.data.value)).then(res => {
-        console.log(res.data)
+      const data = {
+        position:this.data.value
+      }
+      console.log(data);
+      searchmohuClass(data).then(res => {
         this.setData({
-          classSearch:res.data.allClass
+          classSearch:res.data
         })
       })
     },

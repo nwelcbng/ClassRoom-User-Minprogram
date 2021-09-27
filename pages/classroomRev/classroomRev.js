@@ -73,11 +73,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  cpnTap(e){
-    console.log(e.detail);
-    this.setData({
-      type:e.detail.type
-    })
-  },
+  }
+  // cpnTap(e){
+  //   console.log(e.detail);
+  //   this.setData({
+  //     type:e.detail.type
+  //   })
+  // },
 })
