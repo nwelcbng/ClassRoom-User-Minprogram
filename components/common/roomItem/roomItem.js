@@ -45,27 +45,6 @@ Component({
           url: `/pages/classroomDetail/classroomDetail?cid=${this.__data__.cid}&position=${this.__data__.position}&type=${this.__data__.type}&capacity=${this.__data__.capacity}`
         })
       }
-      // this.setData({ dialogShow: true });
-    },
-    // tapDialogButton(e) {
-    //   console.log(e)
-    //   if(e.detail.index == 1){
-    //     console.log(this.data.result)
-    //     console.log(this.data.value)
-    //   }
-    //   this.setData({
-    //       dialogShow: false
-    //   })
-    // },
-    // onChange(e) {
-    //   this.setData({
-    //     result: e.detail,
-    //   });
-    // },
-    // unfoucs(e){
-    //   this.setData({
-    //     value:e.detail.value
-    //   })
-    // }
+    }
   }
 })

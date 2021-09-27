@@ -36,53 +36,8 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  },
   DateOnDisplay() {
     this.setData({ Dateshow: true });
   },
@@ -104,7 +59,6 @@ Page({
     this.refresh();
   },
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
@@ -114,12 +68,10 @@ Page({
       sid:this.data.classStatus[this.data.index].sid,
       remark:this.data.inputValue
     }
-    console.log(data);
     wx.showLoading({
       title: '请求中'
     })
     reserve(data).then(res => {
-      console.log(res)
       wx.hideLoading({
         success: () => {
           if(res.code === 1){
@@ -147,15 +99,10 @@ Page({
       wx.showLoading({
         title: '请求中',
       })
-      console.log({
-        cid:this.data.cid,
-        date:this.DateChange(this.data.dataUncode)
-      })
       refresh({
         cid:this.data.cid,
         date:this.DateChange(this.data.dataUncode)
       }).then(res => {
-        console.log(res)
         wx.hideLoading({
           success: () => {
             if(res.code === 1){

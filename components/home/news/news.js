@@ -32,11 +32,9 @@ Component({
       })
     },
     onSearch(e){
-      console.log(e.detail)
       this.triggerEvent("onSearch",{title:e.detail},{})
     },
     onCancel(){
-      console.log("can")
     },
     cpnTap(e){
       wx.navigateTo({

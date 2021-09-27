@@ -13,7 +13,6 @@ export default function sortClass(data){
       result.push(instance)
     }
   });
-  console.log(result)
   return result;
 }
 

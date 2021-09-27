@@ -41,7 +41,6 @@ Component({
       const data = {
         position:this.data.value
       }
-      console.log(data);
       searchmohuClass(data).then(res => {
         this.setData({
           classSearch:res.data
@@ -49,7 +48,6 @@ Component({
       })
     },
     onCancel(){
-      console.log('cencel')
     },
     cpnTap(e){
       wx.navigateTo({

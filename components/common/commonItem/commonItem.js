@@ -4,15 +4,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    // config:{
-    //   type:Object,
-    //   value:{
-    //     isLink:false,
-    //     value:'',
-    //     label:'',
-    //     title:''
-    //   }
-    // },
     isLink:{
       type:Boolean,
       value:false
