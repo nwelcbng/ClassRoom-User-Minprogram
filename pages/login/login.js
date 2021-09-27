@@ -91,7 +91,7 @@ Page({
               wx.switchTab({
                 url: '/pages/home/home',
               })
-            },1500);
+            },1000);
           }else{
             wx.showToast({
               title: res.msg,

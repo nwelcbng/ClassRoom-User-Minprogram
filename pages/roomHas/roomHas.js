@@ -14,13 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '请求中',
-    })
+    // wx.showLoading({
+    //   title: '请求中',
+    // })
     getReserve().then(res => {
       console.log(res)
-      wx.hideLoading({
-        success: () => {
+      // wx.hideLoading({
+      //   success: () => {
           if(res.code === 1){
             this.setData({
               classHas:res.data
@@ -32,8 +32,8 @@ Page({
               duration:1500
             })
           }
-        },
-      })
+      //   },
+      // })
     }).catch(err => {
       wx.showToast({
         title: '网络错误',
@@ -75,6 +75,38 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showLoading({
+      title: '刷新中'
+    })
+    getReserve().then(res => {
+      console.log(res)
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            this.setData({
+              classHas:res.data
+            })
+          }else{
+            wx.showToast({
+              title: res.msg,
+              icon:'error',
+              duration:1500
+            })
+          }
+        },
+      })
+      wx.stopPullDownRefresh({
+        success: () => {
+        },
+      })
+    }).catch(err => {
+      wx.showToast({
+        title: '网络错误',
+        icon:'error',
+        duration:1500
+      })
+    })
+
 
   },
 

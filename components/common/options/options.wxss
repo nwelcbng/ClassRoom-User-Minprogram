@@ -29,3 +29,10 @@
   height: 100%;
   z-index: 10;
 }
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: -10rpx;
+  margin-right: 20rpx;
+  vertical-align:middle;
+}

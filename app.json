@@ -3,10 +3,10 @@
     "pages/login/login",
     "pages/register/register",
     "pages/home/home",
-    "pages/classroom/classroom",
     "pages/reserve/reserve",
     "pages/detail/detail",
     "pages/classroomRev/classroomRev",
+    "pages/classroom/classroom",
     "pages/classroomDetail/classroomDetail",
     "pages/userinfo/userinfo",
     "pages/roomHas/roomHas",
@@ -20,16 +20,16 @@
     "selectedColor": "#c74546",
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "/assets/imgs/tabbar/shouye.png",
-        "selectedIconPath": "/assets/imgs/tabbar/shouye-active.png"
-      },
-      {
         "pagePath": "pages/classroom/classroom",
         "text": "教室",
         "iconPath": "/assets/imgs/tabbar/jiaoshi.png",
         "selectedIconPath": "/assets/imgs/tabbar/jiaoshi-active.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "公告",
+        "iconPath": "/assets/imgs/tabbar/shouye.png",
+        "selectedIconPath": "/assets/imgs/tabbar/shouye-active.png"
       },
       {
         "pagePath": "pages/reserve/reserve",

@@ -13,9 +13,12 @@ export function refresh(data){
 
 export function reserve(data){
   return request({
-    url:'https://mockapi.eolinker.com/UxuXyaK16a145235f10811d33338546f9963a33084a524e/user/subscribe',
+    url:'/user/subscribe',
     method:"post",
-    header:{Cookie:wx.getStorageSync('token')},
+    header:{
+      'Content-Type':'application/x-www-form-urlencoded',
+      'Cookie':wx.getStorageSync('token')
+    },
     data
   }) 
 }

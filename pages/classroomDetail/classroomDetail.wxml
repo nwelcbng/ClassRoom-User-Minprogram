@@ -5,7 +5,7 @@
   <van-cell title="当前日期(请选择一个日期)" value="刷新状态" bindtap="refresh"lickable>
     <van-icon slot="right-icon" name="replay" class="custom-icon" />
   </van-cell>
-  <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：{{classStatus[index].status}}">
+  <van-cell wx:for="{{array}}" wx:key="index" title="{{item}}" value="当前状态：{{classStatus[index].status==0 ? '空闲' : classStatus[index].status==1? '审核中':'使用中'}}">
   </van-cell>
 </van-cell-group> 
 <van-cell-group  title="信息完善">

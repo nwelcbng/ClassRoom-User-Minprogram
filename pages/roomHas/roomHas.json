@@ -3,5 +3,6 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "roomItem":"/components/common/roomItem/roomItem",
     "van-cell": "@vant/weapp/cell/index"
-  }
+  },
+  "enablePullDownRefresh": true
 }

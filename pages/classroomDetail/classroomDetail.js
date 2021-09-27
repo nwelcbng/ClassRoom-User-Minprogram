@@ -14,7 +14,7 @@ Page({
     date: '',
     dataUncode:'',
     Dateshow: false,
-    array: ['8:00-9:40', '10:00-11:40', '11:00-12:00', '14:30-16:10','16:20-18:00','19:00-20:40','20:50-21:35'],
+    array: ['8:00-9:40', '10:00-11:40', '14:30-16:10','16:20-18:00','19:00-20:40','20:50-21:35'],
     classStatus:[],
     index: 0, //选择器的序号
     inputValue:''
@@ -115,9 +115,31 @@ Page({
       remark:this.data.inputValue
     }
     console.log(data);
+    wx.showLoading({
+      title: '请求中'
+    })
     reserve(data).then(res => {
+      console.log(res)
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            wx.showToast({
+              title: '预约成功',
+              duration:1500
+            })
+          }else{
+            wx.showToast({
+              title: res.msg,
+              icon:'error',
+              duration:1500
+            })
+          }
+        },
+      })
+    }).catch(err => {
       wx.showToast({
-        title: '预定成功'
+        title: '网络错误',
+        icon:'error'
       })
     })
   },
@@ -134,71 +156,30 @@ Page({
         date:this.DateChange(this.data.dataUncode)
       }).then(res => {
         console.log(res)
-        let obj = [
-          {
-            date: "2004-08-07",
-            moment: 1,
-            sid: "sid1",
-            status: 1
-          },
-          {
-            date: "2004-08-07",
-            moment: 3,
-            sid: "sid2",
-            status: 2
-          },
-          {
-            date: "2004-08-07",
-            moment: 2,
-            sid: "sid3",
-            status: 3
-          },
-          {
-            date: "2004-08-07",
-            moment: 6,
-            sid: "sid4",
-            status: 4
-          },
-          {
-            date: "2004-08-07",
-            moment: 5,
-            sid: "sid5",
-            status: 5
-          },
-          {
-            date: "2004-08-07",
-            moment: 4,
-            sid: "sid6",
-            status: 6
-          },
-          {
-            date: "2004-08-07",
-            moment: 0,
-            sid: "sid7",
-            status: 7
-          }
-        ]
-        let classStatus = obj.sort((a,b) => {
-          return a.moment - b.moment;
-        })
-        this.setData({
-          classStatus:classStatus
-        })
-      }).finally(() => {
         wx.hideLoading({
-          success: (res) => {},
+          success: () => {
+            if(res.code === 1){
+              let classStatus = res.data.sort((a,b) => {
+                return a.moment - b.moment;
+              })
+              this.setData({
+                classStatus:classStatus
+              })
+            }
+          },
         })
+
       })
   },
   DateChange(time){
-    let month = time.getMonth();
+    let month = time.getMonth() + 1;
     let date = time.getDate();
-    // if(month < 10){
-    //   month = '0' + month;
-    // }
-    // if(date < 10){
-    //   date = '0' + date; 
-    // }
+    if(month < 10){
+      month = '0' + month;
+    }
+    if(date < 10){
+      date = '0' + date; 
+    }
     return time.getFullYear()+ '-' + month + '-' + date;
   }
 })

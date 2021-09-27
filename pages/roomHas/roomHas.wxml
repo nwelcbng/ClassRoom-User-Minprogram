@@ -2,10 +2,10 @@
   <roomItem cid="123" capacity="130人" type="材化大楼" position="教室一" ></roomItem>
   <roomItem cid="124" capacity="130人" type="材化大楼" position="教室二" ></roomItem>
   <roomItem cid="125" capacity="130人" type="材化大楼" position="教室三" ></roomItem>
-  <van-cell title="教室一" value="预定成功" use-label-slot>
+  <van-cell wx:for="{{classHas}}" wx:key="index" title="教室一" value="预定成功" use-label-slot>
     <view slot="label">
       <view>材化大楼 140人</view>
-      <view>备注：我很帅</view>
+      <view>{{item.remark}}</view>
     </view>
   </van-cell>
 </van-cell-group>
