@@ -23,29 +23,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.requestInfo();
+  },
+  requestInfo(){
     wx.showLoading({
       title: '加载中'
     })
     searchClass().then(res => {
-      if(res.code === 1){
-        const Allclass = sortClass(res.data) 
-        this.setData({
-          Allclass: Allclass
-        })
-        wx.setStorageSync('Allclass', Allclass)
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      }else{
-        wx.hideLoading({
-          success: (res) => {        
+      wx.hideLoading({
+        success: () => {
+          if(res.code === 1){
+            const Allclass = sortClass(res.data) 
+            this.setData({
+              Allclass: Allclass
+            })
+            wx.setStorageSync('Allclass', Allclass)
+          }else{ 
             wx.showToast({
+                title: res.msg,
+                icon:'error',
+                duration:1500
+            })
+          }
+        },
+      })
+    }).catch(err => {
+      wx.hideLoading({
+        success: () => {
+          wx.showToast({
             title: '网络错误',
-            icon:'error',
-            duration:1500
-          })},
-        })
-      }
+            icon:'error'
+          })
+        },
+      })
+    })
+  },
+  onPullDownRefresh(){
+    wx.stopPullDownRefresh({
+      success: () => {
+        this.requestInfo();
+      },
     })
   }
 })
