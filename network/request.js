@@ -9,6 +9,7 @@ export default function(config){
         data:config.data || [],
         timeout:config.timeout,
         header:config.header,
+        timeout:4000,
         success: res => {
           resolve(res.data)
         },

@@ -8,6 +8,7 @@
 .options-item{
   height: 100rpx;
   width: 100%;
+  position: relative;
   line-height: 100rpx;
   font-size: 28rpx;
   border-bottom: 4rpx #f1f1f1 solid;

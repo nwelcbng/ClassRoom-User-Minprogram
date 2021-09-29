@@ -9,14 +9,20 @@
     <view class="options-item"><image class="icon" src="/assets/icon/options/password.png"></image>修改密码</view>
   </navigator>
   <navigator>
-    <button class="share-btn-left" open-type="share" ></button>
+    <view class="options-item">
+      <button class="share-btn-left" open-type="share" ></button>
       <button class="share-btn-right" open-type="share" ></button>
-    <view class="options-item"><image class="icon" src="/assets/icon/options/fenxiang.png"></image>分享给朋友</view>
+      <image class="icon" src="/assets/icon/options/fenxiang.png"></image>
+      分享给朋友
+    </view>
   </navigator>
   <navigator>
-    <button class="feedback-btn-left" open-type="feedback"></button>
-    <button class="feedback-btn-right" open-type="feedback"></button>
-    <view class="options-item"><image class="icon" src="/assets/icon/options/gerenfankui.png"></image>意见反馈</view>
+    <view class="options-item">
+      <button class="feedback-btn-left" open-type="feedback"></button>
+      <button class="feedback-btn-right" open-type="feedback"></button>
+      <image class="icon" src="/assets/icon/options/gerenfankui.png"></image>
+      意见反馈
+    </view>
   </navigator>
-
+  <view class="options-item" bindtap="exit"><image class="icon" src="/assets/icon/options/exit.png"></image>退出登录</view>
 </view>
