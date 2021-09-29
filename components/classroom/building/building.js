@@ -10,6 +10,9 @@ Component({
     },
     position:{
       type:String
+    },
+    image:{
+      type:String
     }
   },
 
@@ -17,7 +20,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**

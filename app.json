@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/classroom/classroom",
     "pages/register/register",
     "pages/home/home",
     "pages/reserve/reserve",
     "pages/detail/detail",
     "pages/classroomRev/classroomRev",
-    "pages/classroom/classroom",
     "pages/classroomDetail/classroomDetail",
     "pages/userinfo/userinfo",
     "pages/roomHas/roomHas",

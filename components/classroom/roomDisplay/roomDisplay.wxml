@@ -33,7 +33,7 @@
   <commonItem title="{{params[4].type}}" isLink="true" params="{{params[4]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[5].type}}" isLink="true" params="{{params[5]}}" bind:cpnTap="cpnTap" ></commonItem>
   <commonItem title="{{params[6].type}}" isLink="true" params="{{params[6]}}" bind:cpnTap="cpnTap" ></commonItem> -->
-  <building wx:for="{{Allclass}}" wx:key="index" position="{{item.position}}"></building>
+  <building wx:for="{{Allclass}}" wx:key="index" position="{{item.position}}" image="{{item.image}}" building="{{classroomMap}}"></building>
 </van-cell-group>
 
 <van-search

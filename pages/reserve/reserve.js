@@ -28,8 +28,8 @@ Page({
 
   onShareAppMessage(){
     return {
-      title:"elc报名网站",
-      path:"/pages/home/home"
+      title:"课室预约系统",
+      path:"/pages/login/login"
     }
   },
   getUserProfile(e) {

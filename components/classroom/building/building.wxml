@@ -1,4 +1,4 @@
 <view class="building" bindtap="cpnTap">
-  <image class="building-img" src="{{'/assets/imgs/building/'+ position + '.jpg'}}" alt=""></image>
+  <image class="building-img" src="{{'/assets/imgs/building/'+ image + '.jpg'}}" alt=""></image>
   <view class="building-title">{{position}}</view>
 </view>

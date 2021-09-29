@@ -26,11 +26,13 @@ Component({
       label:'123',
       title:'123'
     },
-    classSearch:[]
+    classSearch:[],
+    classroomMap:null
   },
   /**
    * 组件的方法列表
    */
+
   methods: {
     onChange(event) {
       this.setData({
