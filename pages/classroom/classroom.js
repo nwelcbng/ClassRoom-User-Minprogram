@@ -10,10 +10,16 @@ Page({
   data: {
     background: [
       {
-        image:'/assets/imgs/tabbar/jiaoshi.png'
+        image:'/assets/imgs/homeSiwper/1.jpg'
       },
       {
-        image:'/assets/imgs/tabbar/jiaoshi-active.png'
+        image:'/assets/imgs/homeSiwper/2.jpg'
+      },      
+      {
+        image:'/assets/imgs/homeSiwper/3.jpg'
+      },
+      {
+        image:'/assets/imgs/homeSiwper/4.jpg'
       }
       ],  //这是本地图片
       Allclass:null

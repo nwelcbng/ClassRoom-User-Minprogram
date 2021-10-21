@@ -1,8 +1,5 @@
 {
-  "component": true,
   "usingComponents": {
-    "van-cell-group": "@vant/weapp/cell-group/index",
-    "building":"/components/classroom/building/building",
     "roomItem":"/components/common/roomItem/roomItem",
     "commonItem":"/components/common/commonItem/commonItem"
   }

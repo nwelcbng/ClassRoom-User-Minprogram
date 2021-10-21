@@ -1,6 +1,6 @@
 import request from "./request"
 
-export default function(data){
+export default function (data){
   return request({
     url:"/user/login",
     header:{

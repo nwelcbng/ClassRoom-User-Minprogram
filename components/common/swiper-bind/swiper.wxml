@@ -1,0 +1,21 @@
+<view class="home-swiper">
+  <swiper class="home-swiper" indicator-dots="{{indicatorDots}}" circular="true"
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}"
+      indicator-color="rgba(255,251,240, .5)"
+      indicator-active-color="rgba(255,251,240)"
+      class="home-swiper"
+
+      >
+        <swiper-item bindtap="toStu">
+          <image class="swiper-img" src="/assets/imgs/news/student.jpg" ></image>
+        </swiper-item>
+        <swiper-item bindtap="toCol">
+          <image class="swiper-img" src="/assets/imgs/news/college.jpg" ></image>
+        </swiper-item>
+        <swiper-item bindtap="toAdm">
+          <image class="swiper-img" src="/assets/imgs/news/admin.jpg" ></image>
+        </swiper-item>
+  </swiper>
+ </view> 

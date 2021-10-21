@@ -5,7 +5,7 @@ export function refresh(data){
     url:'/user/getClassStatusByDate',
     header:{
       'Content-Type':'application/x-www-form-urlencoded',
-      'Cookie':wx.getStorageSync('token')
+      Authorization:wx.getStorageSync('token')
     },
     data
   })
@@ -17,7 +17,7 @@ export function reserve(data){
     method:"post",
     header:{
       'Content-Type':'application/x-www-form-urlencoded',
-      'Cookie':wx.getStorageSync('token')
+      Authorization:wx.getStorageSync('token')
     },
     data
   }) 

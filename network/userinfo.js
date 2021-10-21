@@ -7,7 +7,7 @@ export function submit(data){
     method:"PUT",
     header:{
       'Content-Type':'application/x-www-form-urlencoded',
-      'Cookie':wx.getStorageSync('token')
+      Authorization:wx.getStorageSync('token')
     },
     data
   })
@@ -19,7 +19,7 @@ export function getUserinfo(){
     method:"get",
     header:{
       'Content-Type':'application/x-www-form-urlencoded',
-      'Cookie':wx.getStorageSync('token')
+      Authorization:wx.getStorageSync('token')
     }
   })
 }

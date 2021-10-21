@@ -10,7 +10,8 @@
     "pages/classroomDetail/classroomDetail",
     "pages/userinfo/userinfo",
     "pages/roomHas/roomHas",
-    "pages/password/password"
+    "pages/password/password",
+    "pages/search/search"
   ],
   "useExtendedLib": {
     "kbone": true,
@@ -33,7 +34,7 @@
       },
       {
         "pagePath": "pages/reserve/reserve",
-        "text": "预约",
+        "text": "我的",
         "iconPath": "/assets/imgs/tabbar/yuyue.png",
         "selectedIconPath": "/assets/imgs/tabbar/yuyue-active.png"
       }

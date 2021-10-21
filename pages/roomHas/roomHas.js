@@ -37,7 +37,6 @@ Page({
       title: '刷新中'
     })
     getReserve().then(res => {
-      console.log(res)
       wx.hideLoading({
         success: () => {
           if(res.code === 1){
@@ -58,6 +57,7 @@ Page({
         },
       })
     }).catch(err => {
+      console.log(err)
       wx.showToast({
         title: '网络错误',
         icon:'error',

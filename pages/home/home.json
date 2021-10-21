@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "home-swiper":"/components/common/swiper/swiper",
-    "news":"/components/home/news/news"
+    "home-swiper":"/components/common/swiper-bind/swiper",
+    "news":"/components/common/news/news"
   },
   "enablePullDownRefresh": true
 }

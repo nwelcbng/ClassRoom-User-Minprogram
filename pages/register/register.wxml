@@ -24,3 +24,5 @@
     </view>
   </form>
 </view> 
+
+<image src="/assets/imgs/background.jpg" class="background"></image>

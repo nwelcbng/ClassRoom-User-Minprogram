@@ -5,7 +5,7 @@ export function getReserve(){
     url:'/user/getSubscribeClass',
     header:{
       'Content-Type':'application/x-www-form-urlencoded',
-      'Cookie':wx.getStorageSync('token')
+      Authorization:wx.getStorageSync('token')
     },
   })
 }

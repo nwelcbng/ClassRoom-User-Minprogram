@@ -53,6 +53,18 @@
           "pathName": "pages/password/password",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/adminNew/adminNew",
+          "pathName": "pages/adminNew/adminNew",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/adminDetail/adminDetail",
+          "pathName": "pages/adminDetail/adminDetail",
+          "query": "",
+          "scene": null
         }
       ]
     }

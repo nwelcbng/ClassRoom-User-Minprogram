@@ -11,23 +11,19 @@ Page({
     banners:null,
     background: [
       {
-        image:'/assets/imgs/tabbar/jiaoshi.png'
+        image:'/assets/imgs/news/student.jpg'
       },
       {
-        image:'/assets/imgs/tabbar/jiaoshi-active.png'
+        image:'/assets/imgs/news/college.jpg'
       },
       {
-        image:'/assets/imgs/tabbar/jiaoshi.png'
-      },
-      {
-        image:'/assets/imgs/tabbar/jiaoshi-active.png'
+        image:'/assets/imgs/news/admin.jpg'
       }
       ],  //这是本地图片
       news:[],
       newsSearch:[]
   },
-
-  onLoad: function (options) {
+  onShow: function (options) {
     this.searchInfo();
   },
   onPullDownRefresh(){

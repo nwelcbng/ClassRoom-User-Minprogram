@@ -3,6 +3,8 @@
       autoplay="{{autoplay}}" 
       interval="{{interval}}" 
       duration="{{duration}}"
+      indicator-color="rgba(255,251,240, .5)"
+      indicator-active-color="rgba(255,251,240)"
       class="home-swiper"
       easeInOutCubic>
       <block wx:for="{{banners}}" wx:key="index">

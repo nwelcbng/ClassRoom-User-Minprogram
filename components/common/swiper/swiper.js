@@ -21,7 +21,7 @@ Component({
     vertical: false,
     autoplay: true,
     interval: 2000,
-    duration: 1000
+    duration: 500
   },
 
   /**

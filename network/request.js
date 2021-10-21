@@ -1,4 +1,4 @@
-const baseURL = 'https://www.ximple.icu';
+const baseURL = 'https://www.ximple.icu/api';
 
 export default function(config){
   return new Promise((resolve,reject) => {
@@ -9,7 +9,7 @@ export default function(config){
         data:config.data || [],
         timeout:config.timeout,
         header:config.header,
-        timeout:4000,
+        timeout:5000,
         success: res => {
           resolve(res.data)
         },

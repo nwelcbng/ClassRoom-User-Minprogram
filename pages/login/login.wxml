@@ -7,7 +7,8 @@
     <view class="input-item">
       <text class="label">密码</text><input name="password" class="input" type="passord" value="{{password}}"></input>
     </view>
-    <view >
+
+    <view>
       <button type="primary" class="go-input" formType="submit">登录</button>
       <navigator url="/pages/register/register">
         <button type="primary" class="go-input">注册</button>
@@ -15,3 +16,5 @@
     </view>
   </form>
 </view> 
+
+<image src="/assets/imgs/background.jpg" class="background"></image>

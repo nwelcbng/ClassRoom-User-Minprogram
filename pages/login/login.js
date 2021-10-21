@@ -16,7 +16,6 @@ Page({
   },
 
   formSubmit(e){
-
     wx.showLoading({
       title: '登陆中',
     })
@@ -32,9 +31,9 @@ Page({
             })
             wx.setStorageSync('token', res.data);
             setTimeout(() => {
-              wx.switchTab({
-                url: '/pages/classroom/classroom',
-              })
+                wx.switchTab({
+                  url: '/pages/classroom/classroom',
+                })
             },1000);
           }else{
             wx.showToast({
@@ -55,6 +54,11 @@ Page({
           })
         },
       })
+    })
+  },
+  checkboxChange(e){
+    this.setData({
+      status:e.detail.value
     })
   }
 })

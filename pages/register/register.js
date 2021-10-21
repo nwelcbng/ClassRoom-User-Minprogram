@@ -18,6 +18,7 @@ Page({
       title: '请求中'
     })
     register(e.detail.value).then(res => {
+      console.log(res)
       wx.hideLoading({
         success: () => {
           if(res.code === 1){

@@ -7,7 +7,7 @@
 .content{
   width: 700rpx;
   margin: 0 auto;
-  text-indent: 2em;
+  /* text-indent: 2em; */
 }
 .date{
   width: 700rpx;

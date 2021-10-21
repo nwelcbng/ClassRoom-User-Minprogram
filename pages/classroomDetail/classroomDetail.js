@@ -76,7 +76,7 @@ Page({
         success: () => {
           if(res.code === 1){
             wx.showToast({
-              title: '预约成功',
+              title: '等待审核',
               duration:1500
             })
           }else{

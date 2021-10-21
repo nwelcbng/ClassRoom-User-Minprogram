@@ -12,7 +12,7 @@ Component({
     newsSearch:{
       type:Array,
       value:[]
-    },
+    }
   },
 
   /**
